@@ -1,0 +1,52 @@
+.footer-container {
+  position: relative;
+  padding: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  .timelines {
+    padding: 1rem 4rem;
+    .date {
+      padding-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      mat-radio-button {
+        margin-right: 2rem;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      &:last-child {
+        padding-bottom: 0px;
+      }
+      label {
+        font-weight: bold;
+      }
+      mat-form-field {
+        padding: 0px 1rem;
+        height: 4rem;
+        border-radius: 4px;
+        font-size: 1.2rem;
+        input {
+          padding: 0rem 2rem;
+        }
+      }
+    }
+  }
+
+  .options {
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      font-weight: bold;
+    }
+
+    .next {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+  }
+}

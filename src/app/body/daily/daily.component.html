@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="frequency">
+    <span>Every</span>
+    <div class="mat-input">
+      <mat-form-field appearance="legacy">
+        <input type="number" matInput required [formControl]="form.get('frequency')" />
+        <mat-error *ngIf="form.get('frequency').invalid">invalid value</mat-error>
+      </mat-form-field>
+    </div>
+    <span>day(s)</span>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  .frequency {
+    padding: 4rem;
+    display: flex;
+    font-size: 1.2rem;
+    align-items: center;
+    span {
+      margin: 0px 8px;
+    }
+    mat-form-field {
+      height: 4rem;
+      width: 100%;
+      border-radius: 4px;
+      padding: 0px 1rem;
+      input {
+        padding-left: 1rem;
+      }
+    }
+  }
+}

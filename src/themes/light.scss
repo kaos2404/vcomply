@@ -1,0 +1,91 @@
+$primary-clr: rgb(51, 51, 51);
+$secondary-clr: rgb(153, 153, 153);
+$primary-bg: rgb(242, 242, 242);
+$secondary-bg: rgb(216, 216, 216);
+$highlight-clr: rgb(103, 58, 183);
+$green-clr: rgb(40, 150, 60);
+$red-clr: rgb(219, 58, 58);
+
+.main-bg {
+  background-color: $primary-bg;
+}
+
+.main-clr {
+  color: $primary-clr;
+}
+
+.header-bg {
+  background-color: $secondary-bg;
+}
+
+.header-clr {
+  color: $primary-clr;
+}
+
+.panel-bg {
+  background-color: $secondary-bg;
+}
+
+.nav,
+.nav:visited {
+  color: $secondary-clr;
+}
+.nav.active {
+  color: $highlight-clr;
+  border-bottom: 4px solid $highlight-clr;
+}
+
+.highlight-bg {
+  color: $primary-bg;
+  background-color: $highlight-clr;
+}
+
+.secondary-clr {
+  color: $secondary-clr;
+}
+
+.border-all {
+  border: 1px solid $secondary-clr;
+}
+
+.border-left {
+  border-left: 1px solid $secondary-clr;
+}
+
+.border-right {
+  border-right: 1px solid $secondary-clr;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $secondary-clr;
+}
+
+.border-top {
+  border-top: 1px solid $secondary-clr;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: $green-clr;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: $green-clr;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: $green-clr;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: $highlight-clr;
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: $highlight-clr;
+}
+.warning {
+  color: $red-clr;
+}
+
+.shadow {
+  box-shadow: 0px 0px 4px 2px rgba(121, 121, 121, 0.1);
+}

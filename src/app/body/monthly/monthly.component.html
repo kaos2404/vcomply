@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="frequency">
+    <span>Day</span>
+    <div class="mat-input">
+      <mat-form-field appearance="legacy">
+        <input type="number" matInput required [formControl]="form.get('frequency')" />
+        <mat-error *ngIf="form.get('frequency').invalid">invalid number</mat-error>
+      </mat-form-field>
+    </div>
+    <span>of</span>
+  </div>
+  <div class="days">
+    <div class="day shadow" *ngFor="let month of form.get('months').value">
+      <mat-checkbox [checked]="month.active" (change)="onMonthsChanged(month.name)">{{ month.name }}</mat-checkbox>
+    </div>
+  </div>
+</div>

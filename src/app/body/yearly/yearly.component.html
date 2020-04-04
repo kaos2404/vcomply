@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="frequency">
+    <span>Every</span>
+    <div class="mat-input">
+      <mat-form-field appearance="legacy">
+        <input type="number" matInput required [formControl]="form.get('year')" />
+        <mat-error *ngIf="form.get('year').invalid">cannot be empty</mat-error>
+      </mat-form-field>
+    </div>
+    <span> year<span class="secondary-clr" style="margin: 0;">**</span> and </span>
+    <div class="mat-input">
+      <mat-form-field appearance="legacy">
+        <input type="number" matInput required [formControl]="form.get('day')" />
+        <mat-error *ngIf="form.get('day').invalid">invalid number</mat-error>
+      </mat-form-field>
+    </div>
+    <span> day of </span>
+  </div>
+  <div>
+    <mat-radio-group class="days" aria-label="Select an option">
+      <mat-radio-button
+        class="day shadow"
+        *ngFor="let month of form.get('months').value"
+        [checked]="month.active"
+        (change)="onMonthChanged(month.name)"
+        [value]="month.name"
+        >{{ month.name }}</mat-radio-button
+      >
+    </mat-radio-group>
+  </div>
+  <div class="message secondary-clr">
+    **Every nth year is calculated as the nth year after the first due date
+  </div>
+</div>

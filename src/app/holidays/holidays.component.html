@@ -1,0 +1,50 @@
+<div class="container main-bg">
+  <div class="header-container header-bg border-bottom">
+    <span>Manage weekly off and holidays</span>
+    <button mat-raised-button color="primary" (click)="onBackClicked($event)">
+      <span style="margin-right: 4px; font-size: 1.5rem; line-height: 0.1rem;">&#8592;</span>
+      Back
+    </button>
+  </div>
+  <div class="section weekly">
+    <div class="header main-bg border-bottom">
+      <span>Weekly off</span>
+    </div>
+    <div class="content">
+      <div class="days">
+        <div
+          class="day main-bg shadow"
+          *ngFor="let day of weekly.value"
+          [ngClass]="{ 'highlight-bg': day.active }"
+          (click)="onDayClicked($event, day.name)"
+        >
+          <span>{{ day.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section holidays">
+    <div class="header main-bg border-bottom border-top">
+      <span>Holidays</span>
+      <button mat-stroked-button color="primary" (click)="onAddHoliday($event)">+ Add Holiday</button>
+    </div>
+    <div class="content">
+      <div class="holiday border-all" *ngFor="let holiday of holidays.controls; let i = index">
+        <mat-form-field appearance="outline">
+          <mat-label>Name*</mat-label>
+          <input matInput [formControl]="holiday.get('name')" />
+          <mat-error *ngIf="holiday.get('name').invalid"></mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" (click)="date.open()">
+          <mat-label>Date*</mat-label>
+          <mat-datepicker-toggle matPrefix [for]="date"></mat-datepicker-toggle>
+          <input matInput [matDatepicker]="date" [formControl]="holiday.get('date')" disabled />
+          <mat-datepicker #date disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <mat-icon mat-list-icon class="delete" (click)="onDelete($event, i)">
+          delete
+        </mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

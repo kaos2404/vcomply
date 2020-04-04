@@ -1,0 +1,21 @@
+<div class="container main-bg">
+  <div class="header-container header-bg border-bottom">
+    <span>Due dates</span>
+    <button mat-raised-button color="primary" (click)="onBackClicked($event)">
+      <span style="margin-right: 4px; font-size: 1.5rem; line-height: 0.1rem;">&#8592;</span>
+      Back
+    </button>
+  </div>
+  <div class="message">
+    Multiple dues on same day?
+    <mat-slide-toggle [checked]="checked" (change)="checked = !checked"></mat-slide-toggle>
+  </div>
+  <mat-list class="results">
+    <mat-list-item class="shadow" *ngFor="let item of list | appFilter: weekly:holidays:checked">
+      <mat-icon mat-list-icon>calendar_today</mat-icon>
+      <div mat-line>
+        {{ item.date | date: 'fullDate' }} <span *ngIf="item.forced" class="warning">**shifted due to off day</span>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>

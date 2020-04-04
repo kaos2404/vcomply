@@ -1,0 +1,47 @@
+<div class="footer-container header-bg">
+  <div class="timelines panel-bg" *ngIf="dataStore.type && dataStore.type != 'one-time'">
+    <div class="date">
+      <label for="start">STARTS FROM</label>
+      <mat-form-field class="main-bg no-underline">
+        <input matInput name="start" [matDatepicker]="start" [formControl]="form.get('start')" />
+        <mat-datepicker-toggle matPrefix [for]="start"></mat-datepicker-toggle>
+        <mat-datepicker #start></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="date">
+      <mat-radio-group aria-label="Select an option" [formControl]="form.get('toggle')">
+        <mat-radio-button [value]="false">
+          <label for="end">ENDS BY</label>
+          <mat-form-field class="main-bg no-underline">
+            <input
+              matInput
+              name="end"
+              [matDatepicker]="end"
+              [min]="form.get('start').value"
+              [formControl]="form.get('end')"
+            />
+            <mat-datepicker-toggle matPrefix [for]="end"></mat-datepicker-toggle>
+            <mat-datepicker #end></mat-datepicker>
+          </mat-form-field>
+        </mat-radio-button>
+        <mat-radio-button [value]="true">
+          <label for="end">ENDS AFTER</label>
+          <mat-form-field class="main-bg" appearance="legacy">
+            <input type="number" matInput required [formControl]="form.get('occurence')" />
+            <span style="font-size: 1rem;" matSuffix>Occurences</span>
+          </mat-form-field>
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+
+  <div class="options">
+    <span>You have selected a {{ dataStore.type }} frequency</span>
+    <div class="next">
+      <button mat-raised-button color="primary" (click)="onNextClicked($event)">
+        Next
+        <span style="margin-left: 4px; font-size: 1.5rem; line-height: 0.1rem;">&#8594;</span>
+      </button>
+    </div>
+  </div>
+</div>
